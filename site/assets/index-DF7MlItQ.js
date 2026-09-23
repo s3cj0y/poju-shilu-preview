@@ -27,7 +27,7 @@ var Mp=Object.defineProperty;var Np=(e,t,n)=>t in e?Mp(e,t,{enumerable:!0,config
 他跑出门去，浑然不觉。`,next:"n_02"},{id:"n_02",type:"dialogue",pressure:2,speaker:"npc_l01_woman",emotion:"shout",text:"（她转身追上孩子，一把攥住他的衣领）他摸我。你儿子，摸了我。你别想走。",next:"n_03"},{id:"n_03",type:"choice",pressure:3,prompt:"孩子的脚离了地，哭声变了调，脖子上已经勒出红印。半间餐厅的人都转过头来。",timer:12,timeoutOption:"opt_freeze",options:[{id:"opt_hands_up",text:"按住她手腕：「请松手，孩子脖子勒出印了。」再蹲下：「撞到姐姐了，说什么？」回头请店长保留监控。",tag:"OPTIMAL",aggression:0,initiative:2,effects:{evidence:15,opinion:10,composure:-5,risk:-10,addFlags:["L01_HANDS_VISIBLE"]},next:"n_04"},{id:"opt_explain",text:"他不是故意的，他喊了让一让，他只有四岁——",tag:"NEUTRAL",aggression:1,initiative:1,effects:{evidence:5,opinion:-5,composure:-10,risk:10},next:"n_04"},{id:"opt_freeze",text:"“……”（脑子嗡的一声，看着孩子被攥着领子晃，说不出话）",tag:"TRAP",aggression:0,initiative:0,effects:{evidence:-5,opinion:-15,composure:-15,risk:10},next:"n_04"},{id:"opt_leave",text:"掰开她的手拉起孩子就走：多一事不如少一事……",tag:"TRAP",aggression:1,initiative:0,effects:{evidence:-15,opinion:-20,risk:15,addFlags:["G_NEG_FLED"]},next:"n_04"}],impulsePool:[]},{id:"n_04",type:"dialogue",pressure:3,speaker:"crowd",emotion:"neutral",text:"（围观的人举起了手机。她拨了报警电话：「喂，警察吗？我被人摸了，未成年的那种。」）",next:"n_05"},{id:"n_05",type:"choice",pressure:4,prompt:`派出所，第一次调解。她的条件：「书面道歉、承诺管教，加精神损失费。」
 你看着孩子脖子上的勒痕——她到现在没提过一个「对不起」。`,timer:12,timeoutOption:"opt_hesitate",options:[{id:"opt_call_first",text:"「无心之失我带孩子道歉、凭票担责——但道歉里不写『猥亵』。孩子的伤，也要个说法。」请民警调监控。",tag:"OPTIMAL",aggression:1,initiative:3,decisive:!0,effects:{evidence:30,opinion:20,composure:10,risk:-10,addFlags:["L01_CALLED_POLICE_FIRST"]},next:"n_06"},{id:"opt_agree_police",text:"行……都依你。书面道歉我写，承诺书我签，钱我给。别再把事情闹大就行。",tag:"GOOD",aggression:0,initiative:1,effects:{evidence:10,opinion:10,composure:15,risk:-5},next:"n_06"},{id:"opt_pay",text:"精神损失费是吧……加到五千，转账现结，这事今天就翻篇。",tag:"HUSH_MONEY",aggression:0,initiative:0,effects:{evidence:-20,opinion:-15,composure:5,risk:15,addFlags:["G_NEG_HUSH_MONEY"]},next:"n_06"},{id:"opt_hesitate",text:"……能不能少点？孩子也不是故意的。",tag:"TRAP",aggression:0,initiative:0,effects:{evidence:-10,opinion:-20,composure:-10,risk:15},next:"n_06"}],impulsePool:[{id:"imp_curse_01",text:"松手！你掐的是四岁的孩子！",unlockBelow:50,tag:"TRAP",aggression:3,initiative:1,effects:{opinion:-25,composure:-10,risk:20},next:"n_06"}]},{id:"n_06",type:"dialogue",pressure:4,speaker:"npc_l01_woman",emotion:"perform",text:"（三次调解。她拿出两次送医记录：呼吸性碱中毒、失眠。谈崩在同一个地方——她不肯为孩子颈上的勒痕道一次歉。）",next:"n_07"},{id:"n_07",type:"choice",pressure:4,prompt:`当晚，她的视频上了热搜：《四岁男孩当街摸臀，家长态度嚣张》。
 配文有「被摸臀」三个字。评论区涌进八万条，有人已经认出了你的孩子。`,timer:12,timeoutOption:"opt_pay_now",options:[{id:"opt_refuse_settle",text:"晒出三次调解的记录、孩子颈部的照片：「我愿意为无心之失道歉，也愿意走法律。但恳请大家，放过一个四岁的孩子。」",tag:"OPTIMAL",aggression:1,initiative:3,effects:{evidence:15,opinion:10,risk:-10},next:"n_08"},{id:"opt_ask_price",text:"不接舆论的招。委托律师发函：要求平台对涉未成年人画面打码、下架引导性内容，同时申请证据保全公证监控原件。",tag:"GOOD",aggression:1,initiative:3,effects:{evidence:20,opinion:-5,composure:-5,risk:5,addFlags:["L01_PRICE_ON_RECORD"]},next:"n_08"},{id:"opt_pay_now",text:"连夜托中间人递话：钱可以再谈，视频能不能先删。",tag:"HUSH_MONEY",aggression:0,initiative:0,effects:{evidence:-20,opinion:-10,composure:10,risk:20,addFlags:["G_NEG_HUSH_MONEY"]},next:"n_08"},{id:"opt_mock",text:"开直播回击：「她自己就是干自媒体的，她要的就是流量！」",tag:"TRAP",aggression:3,initiative:1,effects:{opinion:-15,composure:-5,risk:15},next:"n_08"}],impulsePool:[{id:"imp_curse_02",text:"你演够了没有？",unlockBelow:50,tag:"TRAP",aggression:3,initiative:1,effects:{opinion:-20,composure:-10,risk:15},next:"n_08"},{id:"imp_shove_07",text:"冲过去掰开她攥着孩子衣领的手，用力过猛。",unlockBelow:15,tag:"PHYSICAL",aggression:3,initiative:0,next:"e_assault"}]},{id:"n_08",type:"dialogue",pressure:5,speaker:"crowd",emotion:"perform",text:"（完整监控流出：玩具枪、「让一让」、绊了一下，左手擦过，不到一秒——她攥着衣领，是一分五十秒。）",next:"n_09"},{id:"n_09",type:"choice",pressure:5,prompt:`她正式起诉了：要求书面道歉与精神损害赔偿。
-传票到你手上的那天，孩子问你：「爸爸，我是坏人吗？」`,timer:12,timeoutOption:"opt_silent",options:[{id:"opt_let_her_talk",text:"应诉，并且反诉——不为索赔，只求事实定性。你告诉律师：胜诉的每一分钱，全额捐给未成年人保护项目。",tag:"OPTIMAL",aggression:1,initiative:3,effects:{evidence:10,opinion:20,composure:5,risk:-5},next:"n_10"},{id:"opt_silent",text:"只应诉，不反诉。把监控、公证、病历都交给法庭，让证据自己说话。",tag:"GOOD",aggression:0,initiative:1,effects:{evidence:5,opinion:10,composure:-10,risk:-10},next:"n_10"},{id:"opt_appeal_crowd",text:"接受媒体专访，把前因后果从头讲一遍。",tag:"NEUTRAL",aggression:2,initiative:2,effects:{opinion:-10,composure:-10,risk:10},next:"n_10"},{id:"opt_block_camera",text:"在粉丝群里发她的照片和单位：「大家帮我人肉她，让她也尝尝被网暴的滋味。」",tag:"TRAP",aggression:3,initiative:1,effects:{evidence:-20,opinion:-25,composure:-5,risk:20},next:"n_10"},{id:"opt_breath_l01",text:"深吸一口气，把「凭什么」三个字咽回去。开庭还长，先睡觉。",tag:"BREATH",aggression:0,initiative:1,effects:{composure:20,opinion:-5,risk:5},next:"n_09",oncePerNode:!0}],impulsePool:[{id:"imp_shout_09",text:"你他妈到底想干什么！",unlockBelow:50,tag:"TRAP",aggression:3,initiative:1,effects:{opinion:-25,composure:-10,risk:20},next:"n_10"},{id:"imp_shove_09",text:"调解室里，你把桌子掀了。",unlockBelow:15,tag:"PHYSICAL",aggression:3,initiative:0,next:"e_assault"}]},{id:"n_10",type:"cutscene",pressure:3,script:`开庭前夜。
+传票到你手上的那天，孩子问你：「爸爸，我是坏人吗？」`,timer:12,timeoutOption:"opt_silent",options:[{id:"opt_let_her_talk",text:"只应诉，不上热搜：证据交法庭，话留在这间屋。事实澄清那天，她更正、道歉，就和解收手——不追一分赔偿。",tag:"OPTIMAL",aggression:1,initiative:3,effects:{evidence:10,opinion:20,composure:5,risk:-5},next:"n_10"},{id:"opt_silent",text:"应诉，并且反诉——不为索赔，只求事实定性，胜诉款全额捐出。（真实事件里父亲的选择）",tag:"GOOD",aggression:0,initiative:1,effects:{evidence:5,opinion:10,composure:-10,risk:-10},next:"n_10"},{id:"opt_appeal_crowd",text:"接受媒体专访，把前因后果从头讲一遍。",tag:"NEUTRAL",aggression:2,initiative:2,effects:{opinion:-10,composure:-10,risk:10},next:"n_10"},{id:"opt_block_camera",text:"在粉丝群里发她的照片和单位：「大家帮我人肉她，让她也尝尝被网暴的滋味。」",tag:"TRAP",aggression:3,initiative:1,effects:{evidence:-20,opinion:-25,composure:-5,risk:20},next:"n_10"},{id:"opt_breath_l01",text:"深吸一口气，把「凭什么」三个字咽回去。开庭还长，先睡觉。",tag:"BREATH",aggression:0,initiative:1,effects:{composure:20,opinion:-5,risk:5},next:"n_09",oncePerNode:!0}],impulsePool:[{id:"imp_shout_09",text:"你他妈到底想干什么！",unlockBelow:50,tag:"TRAP",aggression:3,initiative:1,effects:{opinion:-25,composure:-10,risk:20},next:"n_10"},{id:"imp_shove_09",text:"调解室里，你把桌子掀了。",unlockBelow:15,tag:"PHYSICAL",aggression:3,initiative:0,next:"e_assault"}]},{id:"n_10",type:"cutscene",pressure:3,script:`开庭前夜。
 沈骊把一沓材料推到你面前：监控公证、病历、调解记录、平台下架函。
 「明天进法庭，你只需要记住一件事——
 我们不是去吵赢谁。我们是去把『发生了什么』，一个字一个字地钉在纸上。」`,next:"n_11"},{id:"n_11",type:"choice",pressure:2,prompt:"法庭。对方律师念完诉求，审判长看向你：「被告方，发表答辩意见。」",timer:12,timeoutOption:"opt_emotional",options:[{id:"opt_demand_footage",text:"「请法庭当庭播放完整监控——那不到一秒的触碰，和之后一分五十秒的抓拽，在同一帧画面里。」",tag:"OPTIMAL",aggression:0,initiative:3,effects:{evidence:20,opinion:5,risk:-5,addFlags:["L01_DEMANDED_FOOTAGE"]},next:"n_12"},{id:"opt_factual",text:"「四岁，无民事行为能力人，不存在猥亵的故意。无心之失我方认——孩子的颈部损伤，另案主张。」",tag:"OPTIMAL",aggression:0,initiative:3,effects:{evidence:15,opinion:5,composure:10,risk:-10},next:"n_12"},{id:"opt_accuse",text:"「先查她！发视频网暴我孩子的是她！」",tag:"NEUTRAL",aggression:2,initiative:2,effects:{evidence:5,opinion:-10,composure:-5,risk:10},next:"n_12"},{id:"opt_emotional",text:"「她就是个炒流量的！我孩子才四岁啊！」（声音失控，审判长敲了法槌）",tag:"TRAP",aggression:1,initiative:0,effects:{evidence:-5,opinion:-10,composure:-10,risk:5,addFlags:["L01_F_BEHAVIOR"]},next:"n_12"}],impulsePool:[{id:"imp_shove_11",text:"庭审中途冲向对方席位，被法警按住。",unlockBelow:15,tag:"PHYSICAL",aggression:3,initiative:0,next:"e_assault"}]},{id:"n_12",type:"cutscene",pressure:1,script:`法庭的屏幕亮起，进度的指针回到那天中午。
@@ -42,31 +42,36 @@ var Mp=Object.defineProperty;var Np=(e,t,n)=>t in e?Mp(e,t,{enumerable:!0,config
 可现在没人讨论那两段时间了。
 
 你本来是要给孩子讨一个定性。
-现在，定性给了你。`,unlock:"card_L01_F"},{id:"e_s_rank",rank:"S",condition:"evidence>=80 && risk<=20 && opinion>=70 && composure>=30",title:"名场面 · 定性",script:`判决书第七页：「……监控所示肢体接触系未成年人在奔跑失衡状态下的无意触碰，
-持续时间不足一秒；原告此后抓拽行为超出合理限度……」
+现在，定性给了你。`,unlock:"card_L01_F"},{id:"e_s_rank",rank:"S",condition:"evidence>=80 && risk<=20 && opinion>=70 && composure>=30",title:"名场面 · 没有变成「事件」",script:`开庭前一周，她的律师打来电话：完整监控做了公证，她愿意公开更正、当面道歉。
+你撤了答辩里所有索赔项，只留一条：请求确认「无意触碰」。
 
-反诉部分：孩子的颈部损伤，她担七成。
-赔偿金到账当天，你全额捐了出去——判决书复印了一份，裱起来。
-不是为了钱，从来不是为了钱。是为了纸上那行字：
+和解笔录签完，她起身时说：「那天……我也吓到了。」
+你说：「孩子后来问你为什么掐他。我到现在不知道怎么答。」
+她没有再说话。第二天，视频下架，更正声明置顶。
 
-**「无意触碰」。**
+这件事从头到尾，没有热搜挂过一天。
+没有赢家通吃，没有谁社死——
+**它没有变成「事件」，它只是变成了大人们处理掉的一件事。**
 
-沈骊收起文件：「下次孩子跑起来，还是让他慢一点。」
-你说好。心里想的是：其实他喊了「让一让」的。
+回家路上孩子问：「爸爸，结束了吗？」
+「结束了。」「那我可以跑了吗？」
+「可以。跑慢一点。」`,unlock:"card_L01_S"},{id:"e_a_rank",rank:"A",condition:"risk<=30 && evidence>=60 && composure>=15",title:"赢了定性，输了三周",script:`判决书第七页：「……系奔跑失衡状态下的无意触碰。」
+定性拿到了，一个字不差。
 
-——
-（真实事件仍在诉讼中。这一页判决，是本作推演的一种可能：
-如果完整监控、公证与那份「不为索赔只求定性」的反诉，都走完了全程。）`,unlock:"card_L01_S"},{id:"e_a_rank",rank:"A",condition:"risk<=30 && evidence>=60 && composure>=15",title:"干净脱身",script:`监控当庭放完，法庭很安静。
-交换意见之后双方都撤了诉：她删视频、公开更正；你承担当日的医药费，为无心之失道歉。
-谁也没赢谁，但事实站住了。
+但热搜挂了十一天，幼儿园换了两个，你请了三次假。
+宣判那天她没来，律师代领的判决书。
 
-回家路上孩子问：「爸爸，法官阿姨说我是无意的，那我是不是没有做错？」
-「你喊了让一让，也绊了一下。」你说，「下次跑慢点，就什么都没有了。」`},{id:"e_b_rank",rank:"B",condition:"risk<=50",title:"惨胜",script:`官司赢了。判决定性「无意触碰」，她的索赔被驳回。
+你赢了纸上的每一个字——
+只是每个字，都要解释给别人听。
 
-但热搜挂了十一天，评论区的弹药换了一茬又一茬。
+（真实事件里，这位父亲走的就是这条路——诉讼仍在进行。）`},{id:"e_b_rank",rank:"B",condition:"risk<=50",title:"惨胜",script:`官司拖了四个月，赢了。
+判决定性「无意触碰」，她的索赔被驳回。
+
+可热搜挂过十一天，评论区的弹药换了一茬又一茬，
 孩子的幼儿园换了两个——总有家长认出他。
 
-你赢了每一个字，只是每个字都要解释给别人听。`},{id:"e_c_rank",rank:"C",condition:"risk<=70",title:"吃了闷亏",script:`书面道歉签了，承诺书签了，精神损失费转了。
+清算下来：正义到了，只是迟到了，
+而且到的时候，车上坐满了别人。`},{id:"e_c_rank",rank:"C",condition:"risk<=70",title:"吃了闷亏",script:`书面道歉签了，承诺书签了，精神损失费转了。
 她收了钱，删了视频，临走说：「其实我也知道他不是故意的。」
 
 那句话让你在停车场坐了半个小时。
@@ -2053,6 +2058,11 @@ HR 问：「你还惦记这个？」
 ■ 涉事女子公开回应
 　三次调解未达成和解；因情绪问题两次送医；
 　面对「蹭流量」质疑，回应「我是干自媒体的，当然需要（关注）」。
+
+■ 网友主流意见（本关评级依据）
+　「四岁的无心之失，当场一句真诚的道歉，五分钟就能解决」——
+　最高赞评论的共同点：最好的结局，是它根本不该成为「事件」；
+　反诉被普遍认可为正当，但也被普遍认为「赢的是代价」。
 
 ——
 事件仍在发展。以上口径可能随司法程序更新。
